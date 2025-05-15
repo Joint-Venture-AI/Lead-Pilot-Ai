@@ -1,3 +1,4 @@
+import PropertyCard from "../Home/PropertyCard";
 import Users from "../Users/Users";
 import EarningProgressBar from "./EarningProgressBar";
 
@@ -15,6 +16,7 @@ const Overview = () => {
           <h1 className="text-5xl font-semibold pt-2">$9000</h1>
         </div>
       </div>
+      <PropertyCard/>
       <EarningProgressBar />
       <div>
         <div className="flex justify-between items-center my-5 px-4">

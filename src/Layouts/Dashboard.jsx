@@ -1,7 +1,7 @@
 import logo from "../assets/logo/logo.png";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { BiHomeAlt2 } from "react-icons/bi";
-import { RiUserLine, RiSettings4Line } from "react-icons/ri";
+import { RiSettings4Line } from "react-icons/ri";
 import { FaRightFromBracket } from "react-icons/fa6";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
@@ -120,9 +120,9 @@ const Dashboard = () => {
 
       {/* Main Content Area */}
       <div
-        className={`pl-64 p-6 flex-1 overflow-y-auto transition-all duration-500 h-[100vh]`}
+        className={`pl-64 p-6 ms-6 flex-1 overflow-y-auto transition-all duration-500 h-[100vh]`}
       >
-        <div className=" px-6 py-4 flex justify-between items-center mb-4 border-b border-gray-200">
+        <div className=" py-4 flex justify-between items-center mb-4 border-b border-gray-200">
           {/* Left Section */}
           <div>
             <h1 className="text-2xl font-semibold text-gray-800">

@@ -3,7 +3,6 @@ import Signup from "../Pages/Authentication/Signup";
 import SignIn from "../Pages/Authentication/SignIn";
 import OtpVerification from "../Pages/Authentication/OtpVerification";
 import Dashboard from "../Layouts/Dashboard";
-import Overview from "../Pages/Dashboards/Overview/Overview";
 import Users from "../Pages/Dashboards/Users/Users";
 import Oil from "../Pages/Dashboards/Oil/Oil";
 import Recipes from "../Pages/Dashboards/Recipes/Recipes";
@@ -25,6 +24,7 @@ import TermsCondition from "../Pages/Dashboards/Setting/TermsCondition";
 import PrivacyPolicy from "../Pages/Dashboards/Setting/PrivacyPolicy";
 import AboutUs from "../Pages/Dashboards/Setting/AboutUs";
 import ResetPass from "../Pages/Authentication/ResetPass";
+import Home from "../Pages/Dashboards/Home/Home";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Overview />,
+        element: <Home />,
       },
       {
         path: "/user",
