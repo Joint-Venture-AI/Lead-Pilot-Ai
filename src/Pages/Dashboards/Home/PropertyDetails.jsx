@@ -2,6 +2,7 @@ import aiIcon from "../../../assets/logo/ai-icon.svg";
 import { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaRulerCombined, FaBed, FaBath } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const PropertyCard = () => {
   const images = [
@@ -17,12 +18,12 @@ const PropertyCard = () => {
       {/* Left Section */}
       <div className="flex flex-col gap-4 w-full md:w-2/3">
         {/* Main Image with Thumbnails */}
-        <div className="grid grid-cols-5 gap-4">
-          <div className="col-span-4">
+        <div className="grid grid-cols-4 gap-4">
+          <div className="col-span-3">
             <img
               src={mainImage}
               alt="Main"
-              className="object-cover rounded-xl w-full h-[500px]"
+              className="object-cover rounded-xl w-full h-[515px]"
             />
           </div>
           <div className="flex flex-col gap-4">
@@ -32,7 +33,7 @@ const PropertyCard = () => {
                 src={img}
                 alt={`Thumb ${idx + 1}`}
                 className={`object-cover rounded-xl cursor-pointer border-2 ${
-                  mainImage === img ? "border-blue-600" : "border-transparent"
+                  mainImage === img ? "border-blue-500" : "border-transparent"
                 }`}
                 onClick={() => setMainImage(img)}
               />
@@ -84,9 +85,11 @@ const PropertyCard = () => {
           <button className="cursor-pointer">
             <img src={aiIcon} alt="AI Icon" className="w-6 h-6" />
           </button>
-          <button className="bg-blue-500 text-white px-6 py-2 rounded cursor-pointer">
-            Contact Now
-          </button>
+          <Link to='/key_finding'>
+            <button className="bg-blue-500 text-white px-6 py-2 rounded cursor-pointer">
+              Contact Now
+            </button>
+          </Link>
           <button className="border border-blue-500 text-blue-500 px-6 py-2 rounded cursor-pointer">
             Schedule Latter
           </button>
