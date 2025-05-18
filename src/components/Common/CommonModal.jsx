@@ -6,7 +6,7 @@ const CommonModal = ({ isOpen, onClose, title, children }) => {
       <div className="bg-white rounded-lg shadow-lg w-[90%] max-w-md relative">
         <button
           onClick={onClose}
-          className="absolute top-0 right-0 text-white bg-red-500 px-3 py-1 rounded-bl-2xl rounded-tr-lg text-lg"
+          className="absolute top-0 right-0 text-white bg-red-500 px-3 py-1 rounded-bl-2xl rounded-tr-lg text-lg cursor-pointer"
         >
           ✕
         </button>

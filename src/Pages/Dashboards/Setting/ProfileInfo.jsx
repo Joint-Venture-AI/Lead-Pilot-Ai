@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import PhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css';
+import { FaCamera } from "react-icons/fa";
 
 const ProfileInformation = () => {
   const [isEditing, setIsEditing] = useState(false);
+  const fileInputRef = useRef(null);
 
   const [formData, setFormData] = useState({
     name: "Sharon",
     email: "alkhahsalkgsalkgsalk@gmail.com",
     phone: "12423000597212",
     role: "Admin",
+    profileImage: "https://i.pravatar.cc/100",
   });
 
   const handleChange = (field, value) => {
@@ -19,6 +22,17 @@ const ProfileInformation = () => {
     }));
   };
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setFormData((prev) => ({
+        ...prev,
+        profileImage: imageUrl,
+      }));
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsEditing(false);
@@ -26,28 +40,46 @@ const ProfileInformation = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="border rounded-lg border-gray-300 p-5">
-      <div className="flex justify-between items-center mb-5 border-b border-gray-300 pb-4">
+    <form onSubmit={handleSubmit} className="p-5">
+      <div className="flex justify-between items-center mb-5 pb-4">
         <h2 className="font-semibold text-lg">Personal Information</h2>
         {!isEditing && (
           <button
             type="button"
             onClick={() => setIsEditing(true)}
-            className="bg-[#328569] text-white py-2 px-4 rounded-full flex items-center gap-2"
+            className="bg-blue-500 text-white py-2 px-4 rounded flex items-center gap-2"
           >
             ✎ Edit Profile
           </button>
         )}
       </div>
 
-      <div className="flex flex-col items-center lg:flex-row gap-6 py-5 px-20">
+      <div className="flex flex-col lg:flex-row gap-6 py-5 px-20">
         {/* Left (Profile Image & Role) */}
-        <div className="w-full lg:w-1/4 flex flex-col items-center border border-gray-300 p-14 rounded-md">
-          <img
-            src="https://i.pravatar.cc/100"
-            alt="profile"
-            className="w-32 h-32 rounded-full object-cover border-4 border-gray-200"
-          />
+        <div className="w-full lg:w-1/4 flex flex-col items-center bg-blue-50 border border-blue-300 p-14 rounded-md relative">
+          <div className="relative">
+            <img
+              src={formData.profileImage}
+              alt="profile"
+              className="w-32 h-32 rounded-full object-cover border-4 border-gray-200"
+            />
+            {isEditing && (
+              <>
+                <div className="absolute inset-0 bg-black/30 rounded-full flex items-center justify-center cursor-pointer"
+                  onClick={() => fileInputRef.current.click()}
+                >
+                  <FaCamera className="text-white text-2xl" />
+                </div>
+                <input
+                  type="file"
+                  accept="image/*"
+                  ref={fileInputRef}
+                  className="hidden"
+                  onChange={handleImageChange}
+                />
+              </>
+            )}
+          </div>
           <p className="mt-4 text-gray-600">Profile</p>
           <p className="font-bold mt-3">{formData.role}</p>
         </div>
@@ -61,7 +93,7 @@ const ProfileInformation = () => {
               value={formData.name}
               onChange={(e) => handleChange("name", e.target.value)}
               disabled={!isEditing}
-              className="w-full border border-gray-300 rounded px-3 py-2"
+              className="w-full bg-blue-100 rounded px-3 py-2"
             />
           </div>
 
@@ -72,7 +104,7 @@ const ProfileInformation = () => {
               value={formData.email}
               onChange={(e) => handleChange("email", e.target.value)}
               disabled={!isEditing}
-              className="w-full border border-gray-300 rounded px-3 py-2"
+              className="w-full bg-blue-100 rounded px-3 py-2"
             />
           </div>
 
@@ -94,7 +126,7 @@ const ProfileInformation = () => {
         <div className="flex justify-end mt-6">
           <button
             type="submit"
-            className="bg-[#328569] text-white px-6 py-2 rounded-lg"
+            className="bg-blue-500 text-white px-6 py-2 rounded-lg"
           >
             Save Info
           </button>
