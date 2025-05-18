@@ -34,14 +34,11 @@ const Setting = () => {
         </Link>
         <h1 className="text-2xl font-semibold">Setting</h1>
       </div>
-      <div className="border border-gray-300 rounded-2xl">
-        <div className="p-4 border-b border-gray-300">
-          <h1>Setting</h1>
-        </div>
-        <div className="p-16 w-full space-y-7">
+      <div className="">
+        <div className="w-full space-y-7">
           <Link
             to="/setting/profile"
-            className="border border-gray-300 p-2 rounded flex justify-between items-center w-full px-7 cursor-pointer "
+            className="bg-blue-100 p-2 rounded flex justify-between items-center w-full px-7 cursor-pointer "
           >
             <p>Personal Information</p>
             <IoChevronForwardSharp />
@@ -49,7 +46,7 @@ const Setting = () => {
 
           <button
             onClick={() => setShowModal(true)}
-            className="border border-gray-300 p-2 rounded flex justify-between items-center w-full px-7 cursor-pointer "
+            className="bg-blue-100 p-2 rounded flex justify-between items-center w-full px-7 cursor-pointer "
           >
             <p>Change Password</p>
             <IoChevronForwardSharp />
