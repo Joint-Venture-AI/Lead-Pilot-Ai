@@ -106,12 +106,12 @@ const Notifications = () => {
       n.id === item.id ? { ...n, read: true } : n
     );
     setNotifications(updated);
-    setSelected(item); // ✅ Set selected item
-    setIsModalOpen(true); // ✅ Open modal properly
+    setSelected(item); // Set selected item
+    setIsModalOpen(true); // Open modal properly
   };
 
   return (
-    <div className="p-6">
+    <div className="">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-semibold">Notifications</h2>
         <button
@@ -127,7 +127,7 @@ const Notifications = () => {
         {notifications.map((item) => (
           <div
             key={item.id}
-            className={`flex gap-4 py-4 cursor-pointer hover:bg-gray-50 ${
+            className={`flex gap-4 py-4 cursor-pointer hover:bg-blue-100 ${
               item.read ? "text-gray-500" : "font-semibold"
             }`}
             onClick={() => handleClickNotification(item)}
@@ -140,7 +140,7 @@ const Notifications = () => {
             <div className="flex-1">
               <button
                 onClick={() => handleView(item)}
-                className="hover:text-[#3B9C79]"
+                className="hover:text-blue-500"
               >
                 {item.title}
               </button>

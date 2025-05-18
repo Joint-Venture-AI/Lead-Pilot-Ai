@@ -74,7 +74,7 @@ const OtpVerification = () => {
                     {...register(`otp${index}`, { required: true, maxLength: 1 })}
                     type="text"
                     maxLength="1"
-                    className="w-12 h-12 text-center border border-gray-300 bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-[#3B9C79] text-lg"
+                    className="w-12 h-12 text-center border border-gray-300 bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
                   />
                 ))}
               </div>
@@ -90,7 +90,7 @@ const OtpVerification = () => {
                   <button
                     type="button"
                     onClick={handleResendOtp}
-                    className="text-[#3B9C79] hover:underline"
+                    className="text-blue-500 hover:underline"
                   >
                     Resend OTP
                   </button>
@@ -103,14 +103,14 @@ const OtpVerification = () => {
 
               <button
                 type="submit"
-                className="w-full bg-white text-[#3B9C79] font-semibold py-2 rounded-full hover:bg-gray-100"
+                className="w-full bg-white text-blue-500 font-semibold py-2 rounded-full hover:bg-gray-100"
               >
                 Verify OTP
               </button>
             </form>
 
             {/* Back Button */}
-            <div className="flex items-center justify-center text-[#3B9C79] mt-4 hover:underline">
+            <div className="flex items-center justify-center text-blue-500 mt-4 hover:underline">
               <button
                 onClick={() => window.history.back()}
                 className="flex items-center"

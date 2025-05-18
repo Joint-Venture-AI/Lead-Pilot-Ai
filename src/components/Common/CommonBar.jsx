@@ -28,7 +28,7 @@ const CommonBar = ({ currentRoute }) => {
       <div className="flex  ">
         <Link
           to={getAddButtonPath()}
-          className="px-4 py-2 rounded-lg text-sm bg-[#3B9C79] hover:shadow-xl text-white cursor-pointer transition"
+          className="px-4 py-2 rounded-lg text-sm bg-blue-500 hover:shadow-xl text-white cursor-pointer transition"
         >
           {getAddButtonText()}
         </Link>

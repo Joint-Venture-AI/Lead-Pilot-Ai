@@ -54,7 +54,7 @@ const Setting = () => {
         </div>
       </div>
 
-      {/* ✅ Change Password Modal */}
+      {/* Change Password Modal */}
       <CommonModal
         isOpen={showModal}
         onClose={() => setShowModal(false)}
@@ -89,7 +89,7 @@ const Setting = () => {
           <div className="text-right">
             <button
               onClick={handleSave}
-              className="bg-[#328569] text-white px-6 py-2 rounded-lg mt-2"
+              className="bg-blue-500 text-white px-6 py-2 rounded-lg mt-2"
             >
               Save
             </button>

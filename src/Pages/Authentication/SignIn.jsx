@@ -74,7 +74,7 @@ const SignIn = () => {
               <input
                 type="checkbox"
                 {...register('remember')}
-                className="accent-[#3B9C79]"
+                className="accent-blue-500"
               />
               Remember me
             </label>
@@ -86,7 +86,7 @@ const SignIn = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full text-[#3B9C79] px-4 py-2 rounded-full bg-white outline-none mt-5"
+            className="w-full text-blue-500 px-4 py-2 rounded-full bg-white outline-none mt-5"
           >
             Sign In
           </button>

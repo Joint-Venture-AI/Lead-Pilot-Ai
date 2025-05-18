@@ -154,7 +154,7 @@ const Leads = () => {
               <td className="py-3 px-4 font-semibold">
                 <button
                   onClick={() => handleViewOwner(lead)}
-                  className="hover:text-[#3B9C79]"
+                  className="hover:text-blue-500"
                 >
                   {lead.name}
                 </button>
