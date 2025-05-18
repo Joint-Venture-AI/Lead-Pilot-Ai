@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import PhoneInput from "react-phone-input-2";
-import 'react-phone-input-2/lib/style.css';
+import "react-phone-input-2/lib/style.css";
 import { FaCamera } from "react-icons/fa";
 
 const ProfileInformation = () => {
@@ -65,7 +65,8 @@ const ProfileInformation = () => {
             />
             {isEditing && (
               <>
-                <div className="absolute inset-0 bg-black/30 rounded-full flex items-center justify-center cursor-pointer"
+                <div
+                  className="absolute inset-0 bg-black/30 rounded-full flex items-center justify-center cursor-pointer"
                   onClick={() => fileInputRef.current.click()}
                 >
                   <FaCamera className="text-white text-2xl" />
@@ -81,7 +82,7 @@ const ProfileInformation = () => {
             )}
           </div>
           <p className="mt-4 text-gray-600">Profile</p>
-          <p className="font-bold mt-3">{formData.role}</p>
+          <p className="text-2xl font-bold mt-3">{formData.role}</p>
         </div>
 
         {/* Right (Form Fields) */}
@@ -117,6 +118,10 @@ const ProfileInformation = () => {
               disabled={!isEditing}
               inputClass="!w-full px-3 py-5"
               containerClass="!w-full"
+              inputStyle={{
+                backgroundColor: "#DBEAFE",
+                border: 0,
+              }}
             />
           </div>
         </div>
@@ -126,7 +131,7 @@ const ProfileInformation = () => {
         <div className="flex justify-end mt-6">
           <button
             type="submit"
-            className="bg-blue-500 text-white px-6 py-2 rounded-lg"
+            className="bg-blue-500 text-white px-6 py-2 rounded"
           >
             Save Info
           </button>

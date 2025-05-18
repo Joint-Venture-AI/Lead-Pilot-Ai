@@ -38,7 +38,7 @@ const Setting = () => {
         <div className="w-full space-y-7">
           <Link
             to="/setting/profile"
-            className="bg-blue-100 p-2 rounded flex justify-between items-center w-full px-7 cursor-pointer "
+            className="bg-blue-100 p-3 rounded flex justify-between items-center w-full px-7  cursor-pointer "
           >
             <p>Personal Information</p>
             <IoChevronForwardSharp />
@@ -46,7 +46,7 @@ const Setting = () => {
 
           <button
             onClick={() => setShowModal(true)}
-            className="bg-blue-100 p-2 rounded flex justify-between items-center w-full px-7 cursor-pointer "
+            className="bg-blue-100 p-3 rounded flex justify-between items-center w-full px-7 cursor-pointer "
           >
             <p>Change Password</p>
             <IoChevronForwardSharp />

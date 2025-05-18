@@ -113,7 +113,7 @@ const Notifications = () => {
   return (
     <div className="">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-semibold">Notifications</h2>
+        <h2 className="text-2xl font-bold mb-4">Notifications</h2>
         <button
           onClick={markAllAsRead}
           className="text-blue-500 flex items-center gap-1"
