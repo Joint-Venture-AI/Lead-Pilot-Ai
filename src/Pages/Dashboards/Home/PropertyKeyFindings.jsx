@@ -172,7 +172,7 @@ const PropertyKeyFindings = () => {
           <img src={aiIcon} alt="AI Icon" className="w-6 h-6" />
         </button>
 
-        <Link to="/key_finding" className="w-full">
+        <Link to="/create_offer" className="w-full">
           <button className="w-full bg-blue-500 text-white px-6 py-2 rounded cursor-pointer text-center">
             Generate Offer
           </button>

@@ -8,6 +8,7 @@ import ResetPass from "../Pages/Authentication/ResetPass";
 import Home from "../Pages/Dashboards/Home/Home";
 import PropertyDetails from "../Pages/Dashboards/Home/PropertyDetails";
 import PropertyKeyFindings from "../Pages/Dashboards/Home/PropertyKeyFindings";
+import PropertyOffer from "../Pages/Dashboards/Home/PropertyOffer";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/key_finding",
         element: <PropertyKeyFindings />,
+      },
+      {
+        path: "/create_offer",
+        element: <PropertyOffer />,
       },
       {
         path: "/setting",
