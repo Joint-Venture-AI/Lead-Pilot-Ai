@@ -123,11 +123,11 @@ const Notifications = () => {
         </button>
       </div>
 
-      <div className="divide-y">
+      <div className="">
         {notifications.map((item) => (
           <div
             key={item.id}
-            className={`flex gap-4 py-4 cursor-pointer hover:bg-blue-100 ${
+            className={`flex gap-4 py-4 cursor-pointer hover:bg-blue-100 transform duration-200 border-b border-gray-100 px-5 ${
               item.read ? "text-gray-500" : "font-semibold"
             }`}
             onClick={() => handleClickNotification(item)}
