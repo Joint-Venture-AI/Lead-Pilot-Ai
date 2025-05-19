@@ -94,7 +94,7 @@ const ProfileInformation = () => {
               value={formData.name}
               onChange={(e) => handleChange("name", e.target.value)}
               disabled={!isEditing}
-              className="w-full bg-blue-100 rounded px-3 py-2"
+              className="w-full bg-blue-100 rounded px-3 py-2 outline-none"
             />
           </div>
 
@@ -105,7 +105,7 @@ const ProfileInformation = () => {
               value={formData.email}
               onChange={(e) => handleChange("email", e.target.value)}
               disabled={!isEditing}
-              className="w-full bg-blue-100 rounded px-3 py-2"
+              className="w-full bg-blue-100 rounded px-3 py-2 outline-none"
             />
           </div>
 
