@@ -1,5 +1,7 @@
-import { useForm } from 'react-hook-form';
-import bannerImage from '../../assets/images/signIn.png';
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { useState } from "react";
 
 const Signup = () => {
   const {
@@ -7,87 +9,128 @@ const Signup = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [showPassword, setShowPassword] = useState(false);
 
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
+  };
   const onSubmit = (data) => {
-    console.log('Signup Data:', data);
+    console.log("Signup Data:", data);
     // Signup logic goes here
   };
 
   return (
-    <div
-      className="relative min-h-screen bg-cover bg-center flex items-center justify-center"
-      style={{
-        backgroundImage: `url(${bannerImage})`,
-      }}
-    >
-      {/* Gradient Overlay */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          background: 'linear-gradient(to bottom right, #FFFFFF99, #3B9C79CC, #FFFFFF99)',
-        }}
-      />
-
-      {/* Form Card */}
-      <div className="relative z-10 bg-[#95CFBA] border border-gray-200 backdrop-blur-sm rounded-xl shadow-lg p-8 w-full max-w-md transform -translate-x-[10%]">
-        <h2 className="text-center text-xl font-semibold mb-2 text-gray-800">
-          Create Account
+    <div className="flex min-h-screen bg-base-200">
+      {/* Left Side */}
+      <div className="w-1/2 bg-blue-500 flex items-center justify-center p-8">
+        <h2 className="text-white text-center text-4xl font-bold leading-relaxed">
+          Logo
         </h2>
-        <p className="text-center text-sm text-gray-700 mb-6">
-          Sign up to access the platform.
-        </p>
+      </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          {/* Full Name */}
-          <input
-            type="text"
-            placeholder="Full Name"
-            {...register('fullName', { required: 'Full name is required' })}
-            className="w-full px-4 py-2 rounded-full bg-white outline-none"
-          />
-          {errors.fullName && (
-            <p className="text-red-600 text-sm">{errors.fullName.message}</p>
-          )}
+      {/* Right Side */}
+      <div className="w-1/2 flex items-center justify-center ">
+        <div className="max-w-lg w-full p-16">
+          <h2 className="text-2xl font-bold text-center mb-2">
+            Sign Up Account
+          </h2>
+          <p className="text-center text-sm mb-6">
+            Already have an Account?{" "}
+            <Link to="/signup" className="text-blue-500 hover:underline">
+              Sign In
+            </Link>
+          </p>
 
-          {/* Email */}
-          <input
-            type="email"
-            placeholder="Email"
-            {...register('email', {
-              required: 'Email is required',
-              pattern: {
-                value: /^\S+@\S+$/i,
-                message: 'Invalid email format',
-              },
-            })}
-            className="w-full px-4 py-2 rounded-full bg-white outline-none"
-          />
-          {errors.email && (
-            <p className="text-red-600 text-sm">{errors.email.message}</p>
-          )}
+          {/* Form */}
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            {/* Name */}
+            <div>
+              <input
+                type="text"
+                {...register("name", {
+                  required: "Name is required",
+                })}
+                placeholder="Your name"
+                className="w-full border border-blue-200 rounded-md p-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              />
+              {errors.name && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.name.message}
+                </p>
+              )}
+            </div>
 
-          {/* Password */}
-          <input
-            type="password"
-            placeholder="Password"
-            {...register('password', {
-              required: 'Password is required',
-              minLength: { value: 6, message: 'Minimum 6 characters' },
-            })}
-            className="w-full px-4 py-2 rounded-full bg-white outline-none"
-          />
-          {errors.password && (
-            <p className="text-red-600 text-sm">{errors.password.message}</p>
-          )}
+            {/* Email or Phone */}
+            <div>
+              <input
+                type="text"
+                {...register("email", {
+                  required: "Email or phone number is required",
+                })}
+                placeholder="Email or Phone Number"
+                className="w-full border border-blue-200 rounded-md p-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              />
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.email.message}
+                </p>
+              )}
+            </div>
 
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full text-blue-500 px-4 py-2 rounded-full bg-white outline-none mt-4"
-          >
-            Sign Up
+            {/* Password */}
+            <div>
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  {...register("password", {
+                    required: "Password is required",
+                  })}
+                  placeholder="Enter your Password"
+                  className="w-full border border-blue-200 rounded-md p-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                />
+                <button
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  className="absolute inset-y-0 right-3 flex items-center text-gray-300"
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
+              {errors.password && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.password.message}
+                </p>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-blue-500 hover:shadow-xl duration-500 text-white font-semibold py-2 rounded-md"
+            >
+              Sign Up
+            </button>
+          </form>
+
+          {/* Divider */}
+          <div className="my-5 text-center text-gray-500">Or Login with</div>
+          {/* Social Login */}
+          <button className="flex items-center justify-center w-full px-4 py-2 rounded-md border border-blue-200 outline-none ">
+            <img
+              src="https://www.svgrepo.com/show/475656/google-color.svg"
+              alt="Google"
+              className="w-5 h-5 mr-2"
+            />
+            Google
           </button>
-        </form>
+
+          {/* Bottom Signup */}
+          <p className="text-center text-sm mt-6">
+            Already have an account?{" "}
+            <Link to="/signin" className="text-blue-500 hover:underline">
+              SignIn here
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );
