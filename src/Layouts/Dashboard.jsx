@@ -1,4 +1,4 @@
-import logo from "../assets/logo/logo.png";
+// import logo from "../assets/logo/logo.png";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { RiSettings4Line } from "react-icons/ri";
@@ -71,7 +71,7 @@ const Dashboard = () => {
       >
         <div className="mb-7 flex gap-2 justify-center items-center">
           <img
-            src={logo}
+            src='{logo}'
             alt="logo"
             className={`cursor-pointer w-16 p-1 duration-500`}
           />

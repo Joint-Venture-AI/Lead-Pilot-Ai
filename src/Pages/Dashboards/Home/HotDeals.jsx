@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom";
 import { FaStar, FaHeart, FaLocationDot, FaBed, FaBath } from "react-icons/fa6";
 import { AiOutlineArrowsAlt } from "react-icons/ai";
+import toast from "react-hot-toast";
+import { useState } from "react";
 const HotDeals = () => {
+  const [liked, setLiked] = useState(false);
+
+  const handleLike = () => {
+    setLiked(!liked);
+    toast.success(
+      liked ? "Removed from wishlist!" : "Added to wishlist!"
+    );
+  };
   const hotDeal = [
     {
       id: 1,
@@ -116,21 +126,24 @@ const HotDeals = () => {
             className="max-w-sm rounded-2xl border border-gray-200 overflow-hidden shadow-sm p-2"
           >
             <div className="relative">
-              <img
-                src={property.image}
-                alt="property"
-                className="w-full h-52 object-cover rounded-xl"
-              />
-              <div className="absolute top-2 right-2 flex gap-2">
-                <div className=" bg-white px-2 py-1 rounded-full flex items-center gap-1 shadow text-sm font-semibold" >
-                  <FaStar className="text-yellow-400" />
-                  {property.rating}
-                </div>
-                <div className=" bg-white p-2 rounded-full shadow">
-                  <FaHeart className="text-gray-600" />
-                </div>
-              </div>
-            </div>
+      <img
+        src={property.image}
+        alt="property"
+        className="w-full h-52 object-cover rounded-xl"
+      />
+      <div className="absolute top-2 right-2 flex gap-2">
+        <div className="bg-white px-2 py-1 rounded-full flex items-center gap-1 shadow text-sm font-semibold">
+          <FaStar className="text-yellow-400" />
+          {property.rating}
+        </div>
+        <button
+          onClick={handleLike}
+          className="bg-white p-2 rounded-full shadow"
+        >
+          <FaHeart className={liked ? "text-red-500" : "text-gray-600"} />
+        </button>
+      </div>
+    </div>
 
             <div className="px-2 py-3">
               <div className="flex items-center justify-between">

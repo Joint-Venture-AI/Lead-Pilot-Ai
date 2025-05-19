@@ -82,7 +82,7 @@ const ResetPass = () => {
                   Confirm
                 </button>
                 <Link
-                  to='/'
+                  to="/"
                   className="w-full text-blue-500 border border-blue-200 text-center rounded px-4 py-2 mt-5"
                 >
                   Cancel

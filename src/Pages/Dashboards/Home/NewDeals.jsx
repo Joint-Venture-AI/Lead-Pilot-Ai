@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
 import { FaStar, FaHeart, FaLocationDot, FaBed, FaBath } from "react-icons/fa6";
 import { AiOutlineArrowsAlt } from "react-icons/ai";
+import toast from "react-hot-toast";
+import { useState } from "react";
 const NewDeals = () => {
+  const [liked, setLiked] = useState(false);
+
+  const handleLike = () => {
+    setLiked(!liked);
+    toast.success(liked ? "Removed from wishlist!" : "Added to wishlist!");
+  };
   const newDeal = [
     {
       id: 1,
@@ -124,13 +132,18 @@ const NewDeals = () => {
                 className="w-full h-52 object-cover rounded-xl"
               />
               <div className="absolute top-2 right-2 flex gap-2">
-                <div className=" bg-white px-2 py-1 rounded-full flex items-center gap-1 shadow text-sm font-semibold">
+                <div className="bg-white px-2 py-1 rounded-full flex items-center gap-1 shadow text-sm font-semibold">
                   <FaStar className="text-yellow-400" />
                   {property.rating}
                 </div>
-                <div className=" bg-white p-2 rounded-full shadow">
-                  <FaHeart className="text-gray-600" />
-                </div>
+                <button
+                  onClick={handleLike}
+                  className="bg-white p-2 rounded-full shadow"
+                >
+                  <FaHeart
+                    className={liked ? "text-red-500" : "text-gray-600"}
+                  />
+                </button>
               </div>
             </div>
 
