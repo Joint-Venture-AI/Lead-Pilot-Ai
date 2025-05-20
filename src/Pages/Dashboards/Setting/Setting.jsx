@@ -73,7 +73,7 @@ const Setting = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="p-4">
+    <div className="">
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
         <button className="text-2xl" onClick={() => navigate(-1)}>

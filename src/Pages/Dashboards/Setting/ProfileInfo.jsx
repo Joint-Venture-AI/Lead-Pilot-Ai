@@ -45,7 +45,7 @@ const ProfileInformation = () => {
 
 
   return (
-    <form onSubmit={handleSubmit} className="p-4">
+    <form onSubmit={handleSubmit} className="">
       <div className="flex justify-between items-center mb-6 pb-4">
         <div className="flex items-center gap-3">
           <button className="text-2xl" onClick={() => navigate(-1)}>

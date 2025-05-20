@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 import CommonModal from "../../../components/Common/CommonModal";
+import { RiArrowLeftLine } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 
 const leadData = [
   {
@@ -133,9 +135,16 @@ const Leads = () => {
     setSelectedOwner(owner);
     setIsModalOpen(true);
   };
+  const navigate = useNavigate();
+
   return (
     <div className="overflow-x-auto">
-      <h2 className="text-2xl font-bold mb-4">Lead Dashboard</h2>
+      <div className="flex items-center gap-3 mb-6">
+        <button className="text-2xl" onClick={() => navigate(-1)}>
+          <RiArrowLeftLine />
+        </button>
+        <h1 className="text-2xl font-semibold">Lead Dashboard</h1>
+      </div>
       <table className="min-w-full bg-white rounded-xl shadow text-center">
         <thead>
           <tr className="bg-gray-100 text-sm text-gray-600 uppercase">
