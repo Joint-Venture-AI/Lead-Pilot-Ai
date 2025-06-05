@@ -72,7 +72,7 @@ const Dashboard = () => {
 			>
 				<div className="mb-7 flex gap-2 justify-center items-center">
 					<img
-						src="{logo}"
+						src="/logo.png"
 						alt="logo"
 						className={`cursor-pointer w-16 p-1 duration-500`}
 					/>
