@@ -93,12 +93,9 @@ const SignIn = () => {
 								/>
 								Remember me
 							</label>
-							<a
-								href="/forgot-password"
-								className="text-blue-500 hover:underline"
-							>
+							<Link to="/otp" className="text-blue-500 hover:underline">
 								Forgot Password?
-							</a>
+							</Link>
 						</div>
 
 						{/* Submit Button */}
