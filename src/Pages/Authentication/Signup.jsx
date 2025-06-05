@@ -1,9 +1,11 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { useState } from "react";
 
 const Signup = () => {
+	const navigate = useNavigate();
+
 	const {
 		register,
 		handleSubmit,
@@ -14,9 +16,10 @@ const Signup = () => {
 	const togglePasswordVisibility = () => {
 		setShowPassword((prev) => !prev);
 	};
+
 	const onSubmit = (data) => {
-		console.log("Signup Data:", data);
-		// Signup logic goes here
+		console.log({ data });
+		navigate("/");
 	};
 
 	return (
@@ -39,7 +42,7 @@ const Signup = () => {
 					</h2>
 					<p className="text-center text-sm mb-6">
 						Already have an Account?{" "}
-						<Link to="/signup" className="text-blue-500 hover:underline">
+						<Link to="/signin" className="text-blue-500 hover:underline">
 							Sign In
 						</Link>
 					</p>
@@ -66,7 +69,7 @@ const Signup = () => {
 						{/* Email or Phone */}
 						<div>
 							<input
-								type="text"
+								type="email"
 								{...register("email", {
 									required: "Email or phone number is required",
 								})}
@@ -108,7 +111,7 @@ const Signup = () => {
 
 						<button
 							type="submit"
-							className="w-full bg-blue-500 hover:shadow-xl duration-500 text-white font-semibold py-2 rounded-md"
+							className="w-full bg-blue-500 hover:shadow-xl duration-500 text-white font-semibold py-2 rounded-md cursor-pointer click"
 						>
 							Sign Up
 						</button>
@@ -117,7 +120,7 @@ const Signup = () => {
 					{/* Divider */}
 					<div className="my-5 text-center text-gray-500">Or Login with</div>
 					{/* Social Login */}
-					<button className="flex items-center justify-center w-full px-4 py-2 rounded-md border border-blue-200 outline-none ">
+					<button className="flex items-center justify-center w-full px-4 py-2 rounded-md border border-blue-200 outline-none cursor-pointer click hover:bg-green-100">
 						<img
 							src="https://www.svgrepo.com/show/475656/google-color.svg"
 							alt="Google"

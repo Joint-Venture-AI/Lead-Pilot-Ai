@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+	const navigate = useNavigate();
+
 	const {
 		register,
 		handleSubmit,
@@ -16,8 +18,8 @@ const SignIn = () => {
 	};
 
 	const onSubmit = (data) => {
-		console.log("SignIn Data:", data);
-		// Sign-in logic here
+		console.log({ data });
+		navigate("/");
 	};
 
 	return (
@@ -102,7 +104,7 @@ const SignIn = () => {
 						{/* Submit Button */}
 						<button
 							type="submit"
-							className="w-full bg-blue-500 hover:shadow-xl duration-500 text-white font-semibold py-2 rounded-md"
+							className="w-full bg-blue-500 hover:shadow-xl duration-500 text-white font-semibold py-2 rounded-md cursor-pointer click"
 						>
 							Login
 						</button>
@@ -110,7 +112,7 @@ const SignIn = () => {
 					{/* Divider */}
 					<div className="my-5 text-center text-gray-500">Or Login with</div>
 					{/* Social Login */}
-					<button className="flex items-center justify-center w-full px-4 py-2 rounded-md border border-blue-200 outline-none ">
+					<button className="flex items-center justify-center w-full px-4 py-2 rounded-md border border-blue-200 outline-none cursor-pointer click hover:bg-green-100">
 						<img
 							src="https://www.svgrepo.com/show/475656/google-color.svg"
 							alt="Google"
