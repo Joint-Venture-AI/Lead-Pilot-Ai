@@ -10,7 +10,13 @@
 		/>
 		<title>Lead Pilot</title>
 		<script>
-			const random = (min, max) => (Math.random() * (max - min + 1) + min) | 0;
+			/** random number generator */
+			const random = (min, max, point = null) => (
+				(r = Math.random() * (max - min + 1) + min),
+				point ? (r - 1).toFixed(point) : r | 0
+			);
+
+			/** range generator */
 			function* range(start, end, step) {
 				while (start <= end) {
 					yield start;
