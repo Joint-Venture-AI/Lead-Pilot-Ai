@@ -166,7 +166,7 @@ const Leads = () => {
 					<button
 						key={idx}
 						disabled={activeTab === tab}
-						className="disabled:bg-[#e5f2ff] disabled:font-bold text-gray-500 disabled:text-gray-950 py-3 px-5 rounded-sm border disabled:border-0 border-[#99caff] box-border"
+						className="disabled:bg-[#e5f2ff] disabled:font-bold text-gray-500 disabled:text-gray-950 py-3 px-5 rounded-sm border disabled:border-0 border-[#99caff] box-border cursor-pointer disabled:cursor-not-allowed"
 						onClick={() => {
 							setActiveTab(tab);
 						}}
