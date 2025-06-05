@@ -32,9 +32,12 @@ export default function Subscription() {
 							))}
 						</ul>
 						<div className="p-4">
-							<button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg w-full click">
+							<Link
+								to={`edit/${data.id}`}
+								className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg w-full click inline-block text-center"
+							>
 								Edit
-							</button>
+							</Link>
 						</div>
 					</div>
 				))}

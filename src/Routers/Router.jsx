@@ -14,6 +14,7 @@ import Notifications from "../Pages/Dashboards/Notification/Notification";
 import ProfileInformation from "../Pages/Dashboards/Setting/ProfileInfo";
 import Subscription from "../Pages/Dashboards/Subscription/Subscription";
 import AddSubscription from "../Pages/Dashboards/Subscription/AddSubscription";
+import EditSubscription from "../Pages/Dashboards/Subscription/EditSubscription";
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
 			{
 				path: "/subscription/add",
 				element: <AddSubscription />,
+			},
+			{
+				path: "/subscription/edit/:id",
+				element: <EditSubscription />,
 			},
 		],
 	},

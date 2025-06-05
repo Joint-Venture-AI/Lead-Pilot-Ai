@@ -1,5 +1,6 @@
 [
 	{
+		"id": 1,
 		"name": "Basic",
 		"price": "$99/month",
 		"features": [
@@ -11,6 +12,7 @@
 		]
 	},
 	{
+		"id": 2,
 		"name": "Premium",
 		"price": "$125/half-year",
 		"features": [
@@ -22,6 +24,7 @@
 		]
 	},
 	{
+		"id": 3,
 		"name": "Enterprise",
 		"price": "$199/year",
 		"features": [
