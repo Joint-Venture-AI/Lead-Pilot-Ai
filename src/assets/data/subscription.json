@@ -1,0 +1,36 @@
+[
+	{
+		"name": "Basic",
+		"price": "$99/month",
+		"features": [
+			"View Members Directory",
+			"View Members Profile",
+			"Send Private Messages",
+			"Add Media To Your Profile",
+			"Add Media To Your Profile"
+		]
+	},
+	{
+		"name": "Premium",
+		"price": "$125/half-year",
+		"features": [
+			"View Members Directory",
+			"View Members Profile",
+			"Send Private Messages",
+			"Add Media To Your Profile",
+			"Add Media To Your Profile"
+		]
+	},
+	{
+		"name": "Enterprise",
+		"price": "$199/year",
+		"features": [
+			"View Members Directory",
+			"View Members Profile",
+			"Send Private Messages",
+			"Add Media To Your Profile",
+			"Priority Support",
+			"Advanced Analytics"
+		]
+	}
+]

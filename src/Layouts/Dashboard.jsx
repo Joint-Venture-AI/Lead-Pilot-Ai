@@ -7,6 +7,7 @@ import { IoNotificationsOutline } from "react-icons/io5";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import Swal from "sweetalert2";
+import { Crown } from "lucide-react";
 
 const Dashboard = () => {
 	const location = useLocation();
@@ -32,6 +33,7 @@ const Dashboard = () => {
 		Lead: AiOutlineUsergroupAdd,
 		Settings: RiSettings4Line,
 		Notification: IoNotificationsOutline,
+		Subscription: Crown,
 	};
 
 	const Menus = [
@@ -52,6 +54,12 @@ const Dashboard = () => {
 			title: "Notification",
 			path: "/notification",
 			icon: iconMappings.Notification,
+			role: "admin",
+		},
+		{
+			title: "Subscription",
+			path: "/subscription",
+			icon: iconMappings.Subscription,
 			role: "admin",
 		},
 		{
