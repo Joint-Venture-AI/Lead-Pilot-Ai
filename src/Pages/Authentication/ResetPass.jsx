@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ResetPass = () => {
 	const navigate = useNavigate();
@@ -112,15 +112,12 @@ const ResetPass = () => {
 								>
 									Confirm
 								</button>
-								{
-									//! cancel is useless
-								}
-								{/* <Link
+								<Link
 									to="/signin"
 									className="w-full text-blue-500 border border-blue-200 text-center rounded px-4 py-2 mt-5 cursor-pointer click"
 								>
 									Cancel
-								</Link> */}
+								</Link>
 							</div>
 						</form>
 					</div>
