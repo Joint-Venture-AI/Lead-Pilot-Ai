@@ -13,6 +13,7 @@ import Leads from "../Pages/Dashboards/Leads/Leads";
 import Notifications from "../Pages/Dashboards/Notification/Notification";
 import ProfileInformation from "../Pages/Dashboards/Setting/ProfileInfo";
 import Subscription from "../Pages/Dashboards/Subscription/Subscription";
+import AddSubscription from "../Pages/Dashboards/Subscription/AddSubscription";
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
 			{
 				path: "/subscription",
 				element: <Subscription />,
+			},
+			{
+				path: "/subscription/add",
+				element: <AddSubscription />,
 			},
 		],
 	},
