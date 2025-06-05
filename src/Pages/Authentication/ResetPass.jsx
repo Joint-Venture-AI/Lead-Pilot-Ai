@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 
 const ResetPass = () => {
@@ -10,6 +12,12 @@ const ResetPass = () => {
 		watch,
 		formState: { errors },
 	} = useForm();
+
+	const [showPassword, setShowPassword] = useState(false);
+
+	const togglePasswordVisibility = () => {
+		setShowPassword((prev) => !prev);
+	};
 
 	const onSubmit = (data) => {
 		console.log({ data });
@@ -44,16 +52,25 @@ const ResetPass = () => {
 						<form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 							{/* Password */}
 							<label className="block text-sm mb-1">New Password</label>
-							<input
-								type="password"
-								placeholder="New Password"
-								{...register("password", {
-									required: "Password is required",
-									minLength: { value: 8, message: "Minimum 8 characters" },
-									maxLength: { value: 10, message: "Maximum 10 characters" },
-								})}
-								className="w-full px-4 py-2 rounded border border-blue-200 outline-none"
-							/>
+							<div className="relative">
+								<input
+									type={showPassword ? "text" : "password"}
+									placeholder="New Password"
+									{...register("password", {
+										required: "Password is required",
+										minLength: { value: 8, message: "Minimum 8 characters" },
+										maxLength: { value: 10, message: "Maximum 10 characters" },
+									})}
+									className="w-full px-4 py-2 rounded border border-blue-200 outline-none"
+								/>
+								<button
+									type="button"
+									onClick={togglePasswordVisibility}
+									className="absolute inset-y-0 right-3 flex items-center text-gray-300"
+								>
+									{showPassword ? <FaEyeSlash /> : <FaEye />}
+								</button>
+							</div>
 							{errors.password && (
 								<p className="text-red-600 text-sm">
 									{errors.password.message}
@@ -62,16 +79,25 @@ const ResetPass = () => {
 
 							{/* Confirm Password */}
 							<label className="block text-sm mb-1">confirm New Password</label>
-							<input
-								type="password"
-								placeholder="Confirm New Password"
-								{...register("confirmPassword", {
-									required: "Please re-enter password",
-									validate: (value) =>
-										value === password || "Passwords do not match",
-								})}
-								className="w-full px-4 py-2 rounded border border-blue-200 outline-none"
-							/>
+							<div className="relative">
+								<input
+									type={showPassword ? "text" : "password"}
+									placeholder="Confirm New Password"
+									{...register("confirmPassword", {
+										required: "Please re-enter password",
+										validate: (value) =>
+											value === password || "Passwords do not match",
+									})}
+									className="w-full px-4 py-2 rounded border border-blue-200 outline-none"
+								/>
+								<button
+									type="button"
+									onClick={togglePasswordVisibility}
+									className="absolute inset-y-0 right-3 flex items-center text-gray-300"
+								>
+									{showPassword ? <FaEyeSlash /> : <FaEye />}
+								</button>
+							</div>
 							{errors.confirmPassword && (
 								<p className="text-red-600 text-sm">
 									{errors.confirmPassword.message}
