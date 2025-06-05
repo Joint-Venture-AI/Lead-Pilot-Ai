@@ -17,14 +17,16 @@ export default function DealCard({ property }) {
 	return (
 		<div
 			key={property.id}
-			className="max-w-sm rounded-2xl border border-gray-200 overflow-hidden shadow-sm p-2"
+			className="max-w-sm rounded-2xl border border-gray-200 overflow-hidden shadow-sm p-2 bg-white hover:bg-gray-100 transition group cursor-pointer click select-none"
 		>
 			<div className="relative">
-				<img
-					src={property.image}
-					alt="property"
-					className="w-full h-52 object-cover rounded-xl"
-				/>
+				<div className="relative overflow-hidden  rounded-xl">
+					<img
+						src={property.image}
+						alt="property"
+						className="w-full h-52 object-cover group-hover:scale-105 transition"
+					/>
+				</div>
 				<div className="absolute top-2 right-2 flex gap-2">
 					<div className="bg-white px-2 py-1 rounded-full flex items-center gap-1 shadow text-sm font-semibold">
 						<FaStar className="text-yellow-400" />
@@ -41,7 +43,9 @@ export default function DealCard({ property }) {
 
 			<div className="px-2 py-3">
 				<div className="flex items-center justify-between">
-					{property.title}
+					<h2 className="text-lg font-semibold text-gray-800 transition group-hover:text-sky-700">
+						{property.title}
+					</h2>
 					<div className="text-lg font-semibold text-gray-800">
 						${random(price / 2, price)}k
 					</div>
