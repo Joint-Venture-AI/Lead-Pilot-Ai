@@ -191,16 +191,15 @@ const Leads = () => {
 					{leadData
 						.filter((lead) => lead?.tab === activeTab)
 						.map((lead, idx) => (
-							<tr key={idx} className="hover:bg-blue-50">
+							<tr
+								key={idx}
+								onClick={() => handleViewOwner(lead)}
+								className="hover:bg-blue-50 cursor-pointer"
+							>
 								<td className="py-3 px-4 font-semibold text-left">
-									<button
-										onClick={() => handleViewOwner(lead)}
-										className="hover:text-blue-500"
-									>
-										{lead.name}
-									</button>
+									{lead.name}
 								</td>
-								<td className="py-4 px-4">
+								<td className="py-4 px-4" onClick={(e) => e.stopPropagation()}>
 									<div className="flex justify-center gap-4">
 										<a href={`tel:${lead.phone}`}>
 											<FaPhoneAlt />
