@@ -16,6 +16,7 @@ const leadData = [
 		email: "john@example.com",
 		phone: "+1234567890",
 		location: "New York, NY",
+		tab: "Health",
 	},
 	{
 		name: "Jane Smith",
@@ -26,6 +27,7 @@ const leadData = [
 		email: "jane@example.com",
 		phone: "+1987654321",
 		location: "Dallas, TX",
+		tab: "Deal",
 	},
 	{
 		name: "Michael Johnson",
@@ -36,6 +38,7 @@ const leadData = [
 		email: "michael@example.com",
 		phone: "+1123456789",
 		location: "Los Angeles, CA",
+		tab: "Health",
 	},
 	{
 		name: "Emily Davis",
@@ -46,6 +49,7 @@ const leadData = [
 		email: "emily@example.com",
 		phone: "+1444555666",
 		location: "Austin, TX",
+		tab: "Deal",
 	},
 	{
 		name: "Robert Wilson",
@@ -56,6 +60,7 @@ const leadData = [
 		email: "robert@example.com",
 		phone: "+1555666777",
 		location: "Miami, FL",
+		tab: "Health",
 	},
 	{
 		name: "Sarah Lee",
@@ -66,6 +71,7 @@ const leadData = [
 		email: "sarah@example.com",
 		phone: "+1222333444",
 		location: "Chicago, IL",
+		tab: "Deal",
 	},
 	{
 		name: "David Brown",
@@ -76,6 +82,7 @@ const leadData = [
 		email: "david@example.com",
 		phone: "+1666777888",
 		location: "Phoenix, AZ",
+		tab: "Health",
 	},
 	{
 		name: "Ashley Miller",
@@ -86,6 +93,7 @@ const leadData = [
 		email: "ashley@example.com",
 		phone: "+1777888999",
 		location: "Seattle, WA",
+		tab: "Deal",
 	},
 	{
 		name: "Chris Martinez",
@@ -96,6 +104,7 @@ const leadData = [
 		email: "chris@example.com",
 		phone: "+1999000111",
 		location: "Denver, CO",
+		tab: "Health",
 	},
 	{
 		name: "Olivia Anderson",
@@ -106,6 +115,7 @@ const leadData = [
 		email: "olivia@example.com",
 		phone: "+1888777666",
 		location: "Atlanta, GA",
+		tab: "Deal",
 	},
 	{
 		name: "Daniel Thomas",
@@ -116,6 +126,7 @@ const leadData = [
 		email: "daniel@example.com",
 		phone: "+1555444333",
 		location: "Las Vegas, NV",
+		tab: "Health",
 	},
 	{
 		name: "Sophia Garcia",
@@ -126,6 +137,7 @@ const leadData = [
 		email: "sophia@example.com",
 		phone: "+1444222111",
 		location: "Orlando, FL",
+		tab: "Deal",
 	},
 ];
 
@@ -176,65 +188,67 @@ const Leads = () => {
 					</tr>
 				</thead>
 				<tbody className="text-sm text-gray-700">
-					{leadData.map((lead, idx) => (
-						<tr key={idx} className="hover:bg-blue-50">
-							<td className="py-3 px-4 font-semibold text-left">
-								<button
-									onClick={() => handleViewOwner(lead)}
-									className="hover:text-blue-500"
-								>
-									{lead.name}
-								</button>
-							</td>
-							<td className="py-4 px-4">
-								<div className="flex justify-center gap-4">
-									<a href={`tel:${lead.phone}`}>
-										<FaPhoneAlt />
-									</a>
-									<a
-										href={`https://www.google.com/maps/search/${lead.location}`}
-										target="_blank"
+					{leadData
+						.filter((lead) => lead?.tab === activeTab)
+						.map((lead, idx) => (
+							<tr key={idx} className="hover:bg-blue-50">
+								<td className="py-3 px-4 font-semibold text-left">
+									<button
+										onClick={() => handleViewOwner(lead)}
+										className="hover:text-blue-500"
 									>
-										<FaMapMarkerAlt />
-									</a>
-									<a href={`mailto:${lead.email}`}>
-										<FaEnvelope />
-									</a>
-								</div>
-							</td>
-							<td className="py-3 px-4">
-								<span
-									className={`px-2 py-1 rounded text-xs ${
-										lead.status === "Contacted"
-											? "text-green-500 bg-green-100 p-3 rounded-full"
-											: lead.status === "Interested"
-											? "text-yellow-500 bg-yellow-100 p-3 rounded-full"
-											: lead.status === "Qualified"
-											? "text-blue-500 bg-blue-100 p-3 rounded-full"
-											: "text-red-500 bg-red-100 p-3 rounded-full "
-									}`}
-								>
-									{lead.status}
-								</span>
-							</td>
-							<td className="py-3 px-4">{lead.motivation}</td>
-							<td className="py-3 px-4">{lead.status}</td>
-							<td className="py-3 px-4">{lead.painPoint}</td>
-							<td className="py-3 px-4">
-								<span
-									className={`px-2 py-1 rounded text-xs ${
-										lead.urgency === "High"
-											? "text-red-500"
-											: lead.urgency === "Medium"
-											? "text-yellow-400"
-											: "text-green-500"
-									}`}
-								>
-									{lead.urgency}
-								</span>
-							</td>
-						</tr>
-					))}
+										{lead.name}
+									</button>
+								</td>
+								<td className="py-4 px-4">
+									<div className="flex justify-center gap-4">
+										<a href={`tel:${lead.phone}`}>
+											<FaPhoneAlt />
+										</a>
+										<a
+											href={`https://www.google.com/maps/search/${lead.location}`}
+											target="_blank"
+										>
+											<FaMapMarkerAlt />
+										</a>
+										<a href={`mailto:${lead.email}`}>
+											<FaEnvelope />
+										</a>
+									</div>
+								</td>
+								<td className="py-3 px-4">
+									<span
+										className={`px-2 py-1 rounded text-xs ${
+											lead.status === "Contacted"
+												? "text-green-500 bg-green-100 p-3 rounded-full"
+												: lead.status === "Interested"
+												? "text-yellow-500 bg-yellow-100 p-3 rounded-full"
+												: lead.status === "Qualified"
+												? "text-blue-500 bg-blue-100 p-3 rounded-full"
+												: "text-red-500 bg-red-100 p-3 rounded-full "
+										}`}
+									>
+										{lead.status}
+									</span>
+								</td>
+								<td className="py-3 px-4">{lead.motivation}</td>
+								<td className="py-3 px-4">{lead.status}</td>
+								<td className="py-3 px-4">{lead.painPoint}</td>
+								<td className="py-3 px-4">
+									<span
+										className={`px-2 py-1 rounded text-xs ${
+											lead.urgency === "High"
+												? "text-red-500"
+												: lead.urgency === "Medium"
+												? "text-yellow-400"
+												: "text-green-500"
+										}`}
+									>
+										{lead.urgency}
+									</span>
+								</td>
+							</tr>
+						))}
 				</tbody>
 			</table>
 
