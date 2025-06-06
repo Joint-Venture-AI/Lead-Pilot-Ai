@@ -12,61 +12,76 @@ import PropertyOffer from "../Pages/Dashboards/Home/PropertyOffer";
 import Leads from "../Pages/Dashboards/Leads/Leads";
 import Notifications from "../Pages/Dashboards/Notification/Notification";
 import ProfileInformation from "../Pages/Dashboards/Setting/ProfileInfo";
+import Subscription from "../Pages/Dashboards/Subscription/Subscription";
+import AddSubscription from "../Pages/Dashboards/Subscription/AddSubscription";
+import EditSubscription from "../Pages/Dashboards/Subscription/EditSubscription";
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Dashboard />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/propertyDetails/:id",
-        element: <PropertyDetails />,
-      },
-      {
-        path: "/key_finding",
-        element: <PropertyKeyFindings />,
-      },
-      {
-        path: "/create_offer",
-        element: <PropertyOffer />,
-      },
-      {
-        path: "/lead",
-        element: <Leads />,
-      },
-      {
-        path: "/notification",
-        element: <Notifications />,
-      },
-      {
-        path: "/setting",
-        element: <Setting />,
-      },
-      {
-        path: "/setting/profile",
-        element: <ProfileInformation />,
-      },
-    ],
-  },
-  {
-    path: "/signin",
-    element: <SignIn />,
-  },
-  {
-    path: "/signup",
-    element: <Signup />,
-  },
-  {
-    path: "/otp",
-    element: <OtpVerification />,
-  },
-  {
-    path: "/reset_password",
-    element: <ResetPass />,
-  },
+	{
+		path: "/",
+		element: <Dashboard />,
+		children: [
+			{
+				path: "/",
+				element: <Home />,
+			},
+			{
+				path: "/propertyDetails/:id",
+				element: <PropertyDetails />,
+			},
+			{
+				path: "/key_finding",
+				element: <PropertyKeyFindings />,
+			},
+			{
+				path: "/create_offer",
+				element: <PropertyOffer />,
+			},
+			{
+				path: "/lead",
+				element: <Leads />,
+			},
+			{
+				path: "/notification",
+				element: <Notifications />,
+			},
+			{
+				path: "/setting",
+				element: <Setting />,
+			},
+			{
+				path: "/setting/profile",
+				element: <ProfileInformation />,
+			},
+			{
+				path: "/subscription",
+				element: <Subscription />,
+			},
+			{
+				path: "/subscription/add",
+				element: <AddSubscription />,
+			},
+			{
+				path: "/subscription/edit/:id",
+				element: <EditSubscription />,
+			},
+		],
+	},
+	{
+		path: "/signin",
+		element: <SignIn />,
+	},
+	{
+		path: "/signup",
+		element: <Signup />,
+	},
+	{
+		path: "/otp",
+		element: <OtpVerification />,
+	},
+	{
+		path: "/reset_password",
+		element: <ResetPass />,
+	},
 ]);
 
 export default router;

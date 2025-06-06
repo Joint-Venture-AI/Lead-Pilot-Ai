@@ -1,0 +1,98 @@
+[
+	{
+		"id": 1,
+		"title": "Old Trafford",
+		"location": "New York",
+		"price": "542k",
+		"originalPrice": "542k",
+		"rating": 4.9,
+		"sqft": 2000,
+		"beds": 5,
+		"baths": 2,
+		"image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+	},
+	{
+		"id": 2,
+		"title": "Sunset Villa",
+		"location": "Los Angeles",
+		"price": "799k",
+		"originalPrice": "850k",
+		"rating": 4.8,
+		"sqft": 3500,
+		"beds": 4,
+		"baths": 3,
+		"image": "https://images.unsplash.com/photo-1599427303058-f04cbcf4756f"
+	},
+	{
+		"id": 3,
+		"title": "Ocean Breeze",
+		"location": "Miami",
+		"price": "620k",
+		"originalPrice": "690k",
+		"rating": 4.7,
+		"sqft": 2800,
+		"beds": 3,
+		"baths": 2,
+		"image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914"
+	},
+	{
+		"id": 4,
+		"title": "Maple Mansion",
+		"location": "Toronto",
+		"price": "920k",
+		"originalPrice": "950k",
+		"rating": 4.6,
+		"sqft": 4000,
+		"beds": 6,
+		"baths": 4,
+		"image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914"
+	},
+	{
+		"id": 5,
+		"title": "Lakeside Cabin",
+		"location": "Seattle",
+		"price": "480k",
+		"originalPrice": "480k",
+		"rating": 4.5,
+		"sqft": 1800,
+		"beds": 2,
+		"baths": 1,
+		"image": "https://images.unsplash.com/photo-1599427303058-f04cbcf4756f"
+	},
+	{
+		"id": 6,
+		"title": "Countryside Home",
+		"location": "Austin",
+		"price": "515k",
+		"originalPrice": "540k",
+		"rating": 4.6,
+		"sqft": 2200,
+		"beds": 3,
+		"baths": 2,
+		"image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914"
+	},
+	{
+		"id": 7,
+		"title": "Modern Loft",
+		"location": "Chicago",
+		"price": "680k",
+		"originalPrice": "710k",
+		"rating": 4.8,
+		"sqft": 2500,
+		"beds": 3,
+		"baths": 2,
+		"image": "https://images.unsplash.com/photo-1599427303058-f04cbcf4756f"
+	},
+	{
+		"id": 8,
+		"title": "Hilltop Retreat",
+		"location": "Denver",
+		"price": "740k",
+		"originalPrice": "770k",
+		"rating": 4.9,
+		"sqft": 3000,
+		"beds": 4,
+		"baths": 3,
+		"image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+	}
+]

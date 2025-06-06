@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Wholesale Freedom+ - Your Free Gift</title>
+		<meta
+			name="&#x63;&#x72;&#x65;&#x61;&#x74;&#x6F;&#x72;"
+			content="&#83;&#104;&#97;&#105;&#115;&#104;&#97;&#98;&#32;&#67;&#104;&#97;&#110;&#100;&#114;&#97;&#32;&#83;&#104;&#105;&#108;"
+		/>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: Arial, sans-serif;
+			}
+
+			body {
+				background-color: #ffffff;
+				color: #333333;
+				line-height: 1.6;
+			}
+
+			.container {
+				margin: 0 auto;
+				position: relative;
+				overflow: hidden;
+			}
+
+			/* Header styles */
+			.header {
+				text-align: center;
+				padding: 60px 20px 40px;
+				position: relative;
+				margin: 90px 0;
+			}
+
+			.blue-shape-top-left {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 200px;
+				height: 300px;
+				background-color: #0078ff;
+				border-bottom-right-radius: 100%;
+				z-index: -1;
+			}
+
+			.blue-shape-top-right {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 400px;
+				height: 300px;
+				background-color: #0078ff;
+				border-bottom-left-radius: 100%;
+				z-index: -1;
+			}
+
+			.blue-shape-bottom-left {
+				position: absolute;
+				bottom: -150px;
+				left: 0;
+				width: 30%;
+				height: 300px;
+				background-color: #0078ff;
+				border-top-right-radius: 100%;
+				z-index: -1;
+			}
+
+			.white-curve {
+				position: absolute;
+				top: 150px;
+				left: 0;
+				width: 100%;
+				height: 100px;
+				z-index: -1;
+			}
+
+			.white-curve svg {
+				width: 100%;
+				height: 100%;
+			}
+
+			.header-content {
+				max-width: 800px;
+				margin: 0 auto;
+			}
+
+			.main-title {
+				font-size: 48px;
+				font-weight: 900;
+				margin-bottom: 20px;
+				line-height: 1.2;
+			}
+
+			.subtitle {
+				font-size: 18px;
+				max-width: 600px;
+				margin: 0 auto;
+				color: #555;
+			}
+
+			/* Pricing cards section */
+			.pricing-section {
+				display: flex;
+				justify-content: center;
+				gap: 20px;
+				padding: 40px 20px;
+				flex-wrap: wrap;
+			}
+
+			.pricing-card {
+				flex: 1;
+				min-width: 250px;
+				max-width: 300px;
+				border: 1px solid #e0e0e0;
+				border-radius: 15px;
+				padding: 30px 20px;
+				text-align: center;
+				background-color: #fff;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+			}
+
+			.pricing-card.featured {
+				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+				transform: scale(1.05);
+				border: none;
+			}
+
+			.card-title {
+				font-size: 20px;
+				font-weight: 700;
+				margin-bottom: 20px;
+			}
+
+			.price {
+				font-size: 32px;
+				font-weight: 800;
+				margin-bottom: 10px;
+			}
+
+			.period {
+				font-size: 16px;
+				color: #666;
+			}
+
+			.product-image {
+				width: 100px;
+				margin: 20px auto;
+			}
+
+			.product-image img {
+				width: 100%;
+				height: auto;
+			}
+
+			.benefit {
+				font-size: 16px;
+				font-weight: 600;
+				margin: 10px 0;
+			}
+
+			.cta-button {
+				display: inline-block;
+				background-color: #0078ff;
+				color: white;
+				padding: 15px 30px;
+				border-radius: 8px;
+				text-decoration: none;
+				font-weight: 600;
+				margin: 20px 0;
+				transition: all 0.3s ease;
+			}
+
+			.cta-button:hover {
+				background-color: #0066dd;
+				transform: translateY(-2px);
+			}
+
+			.security-text {
+				font-size: 12px;
+				color: #777;
+				margin-top: 15px;
+			}
+
+			/* Bottom CTA section */
+			.bottom-cta {
+				padding: 40px 20px 80px;
+				text-align: center;
+			}
+
+			.cta-container {
+				max-width: 600px;
+				margin: 0 auto;
+				border: 2px solid #4caf50;
+				border-radius: 20px;
+				padding: 40px 30px;
+				background-color: #f9f9f9;
+			}
+
+			.cta-title {
+				font-size: 32px;
+				font-weight: 700;
+				color: #333;
+				margin-bottom: 30px;
+			}
+
+			.email-input {
+				width: 100%;
+				max-width: 400px;
+				padding: 15px;
+				border: 1px solid #ddd;
+				border-radius: 8px;
+				font-size: 16px;
+				margin-bottom: 20px;
+			}
+
+			.continue-button {
+				display: inline-block;
+				background-color: #ff6b35;
+				color: white;
+				padding: 15px 60px;
+				border-radius: 50px;
+				text-decoration: none;
+				font-weight: 700;
+				font-size: 18px;
+				transition: all 0.3s ease;
+			}
+
+			.continue-button:hover {
+				background-color: #e55a2a;
+			}
+
+			/* Responsive styles */
+			@media (max-width: 768px) {
+				.pricing-section {
+					flex-direction: column;
+					align-items: center;
+				}
+
+				.pricing-card {
+					width: 100%;
+					max-width: 350px;
+					margin-bottom: 20px;
+				}
+
+				.pricing-card.featured {
+					transform: none;
+				}
+
+				.main-title {
+					font-size: 36px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Blue shapes for design -->
+			<div class="blue-shape-top-left"></div>
+			<div class="blue-shape-top-right"></div>
+			<div class="blue-shape-bottom-left"></div>
+
+			<!-- Header section -->
+			<header class="header">
+				<div class="header-content">
+					<h1 class="main-title">
+						From Wholesale Freedom+<br />Your Free Gift
+					</h1>
+					<p class="subtitle">
+						Based on your interest, we've unlocked a limited-time membership
+						tier with exclusive benefits. Choose your access level to activate
+						your savings
+					</p>
+				</div>
+			</header>
+
+			<!-- Pricing cards section -->
+			<div class="pricing-section">
+				<!-- Monthly Access Card -->
+				<div class="pricing-card">
+					<h2 class="card-title">MONTHLY ACCESS</h2>
+					<div class="price">$29.99 <span class="period">/month</span></div>
+					<a href="#" class="cta-button">Start Saving Now</a>
+					<p class="security-text">100% secure checkout<br />Cancel anytime</p>
+				</div>
+
+				<!-- Lifetime Access Card (Featured) -->
+				<div class="pricing-card featured">
+					<h2 class="card-title">LIFETIME ACCESS</h2>
+					<div class="product-image">
+						<img
+							src="/realistic-vitamin-complex-container.png"
+							alt="Product Bottle"
+						/>
+					</div>
+					<p class="benefit">+FREE Gummies</p>
+					<p class="benefit">+ Early Access</p>
+					<a href="#" class="cta-button">Only 12 VIP spots left today</a>
+					<p class="security-text">100% secure checkout<br />Cancel anytime</p>
+				</div>
+
+				<!-- Lifetime Access Card -->
+				<div class="pricing-card">
+					<h2 class="card-title">LIFETIME ACCESS</h2>
+					<div class="price">$29.99 <span class="period">/month</span></div>
+					<p class="benefit">+Never pay retail again</p>
+					<a href="#" class="cta-button">Claim Lifetime Deal</a>
+					<p class="security-text">100% secure checkout<br />Cancel anytime</p>
+				</div>
+			</div>
+
+			<!-- Bottom CTA section -->
+			<div class="bottom-cta">
+				<div class="cta-container">
+					<h2 class="cta-title">Claim Your Free Bottle Now!</h2>
+					<form>
+						<input
+							type="email"
+							class="email-input"
+							placeholder="Email Address"
+							required
+						/>
+						<div>
+							<a href="#" class="continue-button">Continue</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
