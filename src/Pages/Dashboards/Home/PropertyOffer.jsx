@@ -132,7 +132,7 @@ const PropertyOffer = () => {
 			</div>
 			<div className="flex flex-col md:flex-row gap-4 mb-10 items-center w-full">
 				<a
-					href="/email.template.html"
+					href="/e-mail.template.html"
 					className="w-full bg-blue-500 text-white px-6 py-2 rounded cursor-pointer text-center click"
 				>
 					Send via Email
